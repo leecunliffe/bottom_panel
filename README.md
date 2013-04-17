@@ -21,6 +21,10 @@ Use it something like this:
     
     bottomPanel.show();
     
+    bottomPanel.port.on("command", function(msg) {
+      console.log(msg);
+    });
+    
     bottomPanel.iframe.addEventListener("load", function(e) {
       bottomPanel.port.emit("some-command");
     }, true);
